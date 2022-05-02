@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Episodio;
 use Illuminate\Http\Request;
 
-class SeriesController extends Controller
+class EpisodiosController extends Controller
 {
 
     public function index()
