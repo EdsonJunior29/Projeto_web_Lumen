@@ -11,7 +11,7 @@ class Serie extends Model
     protected $fillable =
     ['nome'];
 
-    protected $perPage = 3;
+    protected $perPage = 10;
 
     public function episodios()
     {
