@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
+use App\Serie;
 
 class SeriesController extends Controller
 {
     public function index()
     {
-        return [
-            'Lost',
-            'Breaking Bad'
-        ];
+        return Serie::all();
     }
 }
