@@ -21,8 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('serie_id');
 
             $table->foreign('serie_id')
-                ->references('series')
-                ->on('id')
+                ->references('id')
+                ->on('series')
                 ->cascadeOnDelete();
 
             $table->timestamps();
