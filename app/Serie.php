@@ -10,7 +10,6 @@ class Serie extends Model
     protected $fillable =
     ['nome'];
 
-
     public function episodios()
     {
         return $this->hasMany(Episodio::class);

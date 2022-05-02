@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Serie;
+use App\Episodio;
 use Illuminate\Http\Request;
 
 class SeriesController extends Controller
@@ -10,19 +10,19 @@ class SeriesController extends Controller
 
     public function index()
     {
-        return Serie::all();
+        return Episodio::all();
     }
 
     public function store(Request $request)
     {
-        return response()->json(Serie::create([
+        return response()->json(Episodio::create([
             'nome' => $request->nome
         ]), 201);
     }
 
     public function show(int $id)
     {
-        $serie = Serie::find($id);
+        $serie = Episodio::find($id);
         if (is_null($serie)) {
             return response()->json('', 204);
         }
@@ -31,7 +31,7 @@ class SeriesController extends Controller
 
     public function update(int $id, Request $request)
     {
-        $serie = Serie::find($id);
+        $serie = Episodio::find($id);
         if (is_null($serie)) {
             return response()->json([
                 'erro' => 'Recurso não encontrado'
@@ -45,7 +45,7 @@ class SeriesController extends Controller
 
     public function destroy(int $id)
     {
-        $qtdRecursoRemovido = Serie::destroy($id);
+        $qtdRecursoRemovido = Episodio::destroy($id);
         if ($qtdRecursoRemovido === 0) {
             return response()->json(['erro' => 'Recurso não encontrado'], 404);
         }
