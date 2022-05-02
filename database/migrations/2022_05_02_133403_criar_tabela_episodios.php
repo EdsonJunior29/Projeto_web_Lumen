@@ -17,15 +17,13 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->integer('temporada');
             $table->integer('numero');
-            $table->boolean('assistido')->default(false);
+            $table->boolean('assistido');
             $table->unsignedBigInteger('serie_id');
 
             $table->foreign('serie_id')
                 ->references('id')
                 ->on('series')
                 ->cascadeOnDelete();
-
-            $table->timestamps();
         });
     }
 

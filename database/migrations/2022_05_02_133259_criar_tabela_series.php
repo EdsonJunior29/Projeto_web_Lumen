@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('series', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 200)->unique();
-            $table->timestamps();
         });
     }
 
